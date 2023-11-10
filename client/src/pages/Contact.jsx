@@ -41,7 +41,7 @@ const Contact = () => {
     <Navbar/>
       <div className="login flex justify-evenly h-[90vh] bg-light-green">
         <div className="flex w-1/2 ml-5 h-full items-center justify-center">
-          <img src={contactImage} className="flex h-96 m-auto p-auto"></img>
+          <img src={contactImage} alt="" className="flex h-96 m-auto p-auto"></img>
         </div>
         <div className="flex w-1/2 h-full items-center justify-center">
         <div className="flex flex-col border-2 border-white m-4 bg-white-green h-96">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import html from "../components/utils/imgs/html.png";
 import css from "../components/utils/imgs/css.png";
@@ -25,10 +25,12 @@ const Home = () => {
         <div className="flex w-3/5 h-screen relative">
           <img
             src={html}
+            alt=""
             className="border-1 border-grey rounded-xl w-1/2 absolute top-[220px] right-[300px] z-0 shadow-xl shadow-[#B15EFF]"
           />
           <img
             src={css}
+            alt=""
             className="border-1 border-grey rounded-xl w-1/2 absolute top-12 right-12 z-1 shadow-xl shadow-[rgb(112,110,196)]"
           />
         </div>
@@ -37,6 +39,7 @@ const Home = () => {
         <div className="flex w-2/5">
           <img
             src={rooms}
+            alt=""
             className="rounded-xl shadow-xl shadow-lightgreen"
           />
         </div>
@@ -67,10 +70,12 @@ const Home = () => {
         <div className="flex justify-between p-6">
           <img
             src={html}
+            alt=""
             className="border-1 border-grey rounded-xl w-1/3 shadow-xl shadow-grey"
           />
           <img
             src={css}
+            alt=""
             className="border-1 border-grey rounded-xl w-1/3 shadow-xl shadow-grey"
           />
         </div>

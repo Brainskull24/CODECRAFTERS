@@ -43,10 +43,9 @@ const Main = () => {
     setCss(css);
     setJs(js);
   }, []);
+  
   console.log(html, css, js);
-  const divStyle = {
-    minHeight: "200vh",
-  };
+
   return (
     <main className="overflow-y-hidden min-h-96">
       <nav className="flex p-3 text-white justify-between items-center font-bold font-mono bg-black">
