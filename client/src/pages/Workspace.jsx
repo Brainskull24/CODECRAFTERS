@@ -11,7 +11,7 @@ const Workspace = () => {
     if (!auth?.token) {
       navigate("/login")
     }
-  }, [auth?.token]);
+  }, [auth?.token,navigate]);
   const handleLogout = () => {
     setAuth({
       ...auth,
