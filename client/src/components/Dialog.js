@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const SettingsDialog = ({ isOpen, onClose }) => {
@@ -24,7 +24,22 @@ const SettingsDialog = ({ isOpen, onClose }) => {
   const dialogStyle = {
     display: isOpen ? "flex" : "none",
   };
-
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      localStorage.setItem("code details", JSON.stringify({ title,description}));
+    }, 250);
+    return () => clearTimeout(timeout);
+  }, [title,description]);
+  useEffect(() => {
+    const { title,description } = JSON.parse(
+      localStorage.getItem("code details")
+    ) || {
+      title:"Code Title",
+      description:"Code Description"
+    };
+    setTitle(title);
+    setDescription(description);
+  }, []);
   return (
     <div className="settings-dialog" style={dialogStyle}>
       <div className="flex flex-col bg-black w-96 h-96 p-5 gap-2 rounded-lg shadow-xl shadow-grey">

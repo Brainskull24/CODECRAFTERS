@@ -17,6 +17,9 @@ const Navbar = () => {
         <NavLink className=" text-xm hover:text-lightgreen" to="/challenges">
           Challenges
         </NavLink>
+        <NavLink className=" text-xm hover:text-lightgreen" to="/workspaces">
+          Workspaces
+        </NavLink>
         <button className="border-2 border-lightgreen hover:border-white transition duration-500 p-2 rounded-lg w-20">
           <NavLink className="" to="/login">
             Login

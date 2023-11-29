@@ -52,7 +52,7 @@ const Home = () => {
               </span>
             </p>
             <button className="text-lg px-4 py-2 border-2 rounded-lg hover:border-white transition duration-500 w-fit border-lightgreen">
-              <NavLink to="/rooms">Explore Rooms</NavLink>
+              <NavLink>Explore Rooms</NavLink>
             </button>
           </div>
         </div>

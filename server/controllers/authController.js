@@ -1,5 +1,5 @@
 const userModel = require("../models/userModel.js")
-const codeModel = require("../models/codeModel.js")
+const JWT = require("jsonwebtoken");
 const register = async (req, res) => {
   try {
     const { name, email, password,confirmpassword } = req.body;
@@ -61,41 +61,24 @@ const login = async(req,res) => {
         message: "Passwords don't match"
       })
     }
+    const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "7h",
+    });
+    user.token = token;
     res.status(201).send({
       success: true,
       message: "Login Successfull",
       user:{
         _id:user._id,
         email:user.email,
-        password:user.password
-      }
+        password:user.password,
+        name:user.name,
+      },
+      token,
     })
   }catch(error){
     console.log(error);
   }
 }
 
-const codedetails = async (req, res) => {
-  try {
-    const { title , description} = req.body;
-    if (!title || !description) {
-      return res.status(200).send({
-        success:false,
-        message:"Fill all details to continue"
-      });
-    }
-    const code = await new codeModel({
-      title,
-      description
-    }).save();
-    res.status(201).send({
-      success: true,
-      message: "Details saved successfully",
-      code,
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-module.exports = {register,login,codedetails}
+module.exports = {register,login}

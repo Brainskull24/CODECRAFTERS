@@ -11,7 +11,6 @@ const Main = () => {
   const [js, setJs] = useState(initialJs);
   const [srcDoc, setSrcDoc] = useState("");
   const [dialogBox, ShowDialogBox] = useState(false);
-
   const resetCode = () => {
     setHtml(initialHtml);
     setCss(initialCss);
@@ -37,20 +36,17 @@ const Main = () => {
     ) || {
       html: "<h1>Hello People </h1>",
       css: "",
-      js: "// Follow Prince Codemon",
+      js: "",
     };
     setHtml(html);
     setCss(css);
     setJs(js);
   }, []);
-  
-  console.log(html, css, js);
-
   return (
     <main className="overflow-y-hidden min-h-96">
       <nav className="flex p-3 text-white justify-between items-center font-bold font-mono bg-black">
         <div className="flex items-center text-lg">
-          <h1>Project Name</h1>
+          <h1></h1>
         </div>
         <div className="flex items-center justify-end gap-3 text-md">
           <button className="border-2 border-white transition duration-500 p-2 rounded-lg w-20">
@@ -71,7 +67,7 @@ const Main = () => {
           >
             Reset
           </button>
-          <Dialog isOpen={dialogBox} onClose={() => ShowDialogBox(false)} />
+      <Dialog isOpen={dialogBox}  onClose={() => ShowDialogBox(false)} />
         </div>
       </nav>
       <div className="pane top-pane">
