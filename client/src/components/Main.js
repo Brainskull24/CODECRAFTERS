@@ -46,7 +46,7 @@ const Main = () => {
     <main className="overflow-y-hidden min-h-96">
       <nav className="flex p-3 text-white justify-between items-center font-bold font-mono bg-black">
         <div className="flex items-center text-lg">
-          <h1></h1>
+          <h1>Sample Workspace</h1>
         </div>
         <div className="flex items-center justify-end gap-3 text-md">
           <button className="border-2 border-white transition duration-500 p-2 rounded-lg w-20">
